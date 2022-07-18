@@ -1,0 +1,152 @@
+Recipe Book is for users to easily keep all of their recipes and shopping list together,
+and be able to easily meal plan too.
+
+User Stories
+-Users will be able to login to see their own recipes
+-Once a user is logged in, the main page will be the Recipe page
+-The navigation menu will have Recipe, Menu, Shopping List, and Logout
+-The Recipe page will include:
+    -a button to add a recipe
+    -a dropdown for categories, which will change the list of recipes
+    -a search bar, which will change the list of recipes
+    -a list of recipes (if have time, the list will include a photo of the recipe with the recipe name)
+-To add a recipe, a popup will appear that will include:
+    -a textbox for the recipe name, required
+    -(if time) a box to add a photo, optional
+    -a box to add an ingredient that will include:
+        -quantity, optional
+        -measurement, optional
+        -ingredient, required
+        -all recipes must have at least 1 ingredient, once there are at least 2 ingredients, a delete option will be available to delete an ingredient
+    -a button to add an ingredient
+    -a textarea box to add a description, instruction, notes, etc., optional
+    -a button to add recipe to a category (which will be a popup to the category settings)
+    -a button to add recipe to the menu
+    -a save button, with confirmation
+    -a cancel button
+    -a delete button, with confirmation
+-When a recipe is chosen, it will go to the Recipe page and will include:
+    -Recipe name
+    -Photo
+    -List of Ingredients
+        -each ingredient will have a button to add the ingredient to the shopping list
+    -Instructions
+    -on right side will include:
+        -an edit button, which will open the popup for adding a recipe
+        -list of the categories the recipe is in
+        -list of dates recipe is scheduled for in menu
+        -a button to add to the menu
+-The Menu Page
+    -menu title
+    -this page might be a little much for this assignment, so the basic page will include:
+        -the list of days with scheduled meals
+            -Date, meal time, recipe title
+    -if I have time, I would really like to:
+        -on the left side:
+            -each meal time (breakfast, dinner, etc.) available and color coded
+            -a settings button to add, edit, delete, and change color of meal times (and rearrange for simplicity in calendar)
+            -a button to add a recipe to the menu
+        -middle/right
+            -a calendar, sunday-saturday, in each date showing the recipe name with corresponding color of meal time
+            -will show 5 weeks (current month), with today highlighted
+            -will be able to go back 6 months from current
+            -will be able to go forward 1 year
+            -basically, looks similar to google calendars, and can change recipe or delete, and would like to be able to add meals on own, just not add ingredients to shopping list
+-The Shopping List page
+    -will show shopping list
+        -each item will have the:
+            -quantity
+            -item
+            -checkbox
+            -an edit option
+            -a delete option, with confirmation
+        -at end of list, an add item button (will show new line where user can add)
+        -a little farther down, a button for finished shopping where anything checked will now disappear from list
+        -if I have time, would like to:
+            -on left side have the ingredients according to what is scheduled on the Menu page for the next 10 days
+            -if multiple recipes have same ingredient, add them together, including conversions
+            -each item will have a checkbos
+            -a button on the bottom will add the checked items to the shopping list
+            -will check to see if item is already on list (and not add to left)
+                -maybe have another small list saying the ingredient is already on right list, but bring attention to possibly needing more quantity
+                -add quantity in list if no measurement (like 5 apples, doesn't have a measurement, so can add to apples if recipe calls for it)
+-the category dropdown
+    -show each category
+        -with checkbox (when all is selected, deselects the rest)
+        -at bottom:
+            -OK button
+            -cancel button
+            -settings button
+-the category settings popup
+    -lists each category with a checkbos, an edit, and delete button
+    -a button to add a category
+    -an ok button
+    -cancel button
+-if have time, the add to menu popup
+    -calendar to select date
+    -dropdown for meal times (can select multiple)
+    -ok button (if recipe already in date and meal time, confirm to add another meal)
+    -cancel button
+-menu settings
+    -list each meal time
+        -make each movable in list (same order that will show on calendar)
+        -color
+        -color dropdown
+        -edit
+        -delete
+    -add time
+    -save button
+    -cancel button
+
+
+
+
+Journal Entries:
+2/23/2022: Started journal and added in user stories. Created logger.
+2/24/2022: Added recipe route and model. Added user route and model.
+2/25/2022: Updated recipe. Added category route and model.
+2/26/2022: Added time category route and model. Added list item route and model.
+    Turned in DEL I.
+3/2/2022: Added config. Added auth.
+3/3/2022: Updated validation with Joi. Updated validation
+    with mongoose schema. Added admin. Added json web token.
+    Began testing APIs.
+3/5/2022: Tested some of the APIs.
+3/6/2022: Tested some of the APIs.
+3/7/2022: Finished testing APIs, with a couple of exceptions when dealing with
+    arrays and objectIds.
+3/14/2022: Added some error handling after watching the Error Handling videos.
+    Turned in DEL II.
+3/16/2022: Started the React side with the different lists.
+3/21/2022: Add the lists on the React side (recipe-book-react), changed some of
+    the APIs to better work for validation with IDs.
+3/28/2022: Lifted the states to App.js. I'm not really liking how Recipe is
+    currently being handled, but I'll keep it for now until I learn more,
+    then fiddle with it some more.
+3/29/2022: Finished lifting the states for the lists, added the Navbar, but
+    without the implementation, have not yet done the implementation for
+    any of the buttons except delete. Turned in DEL III.
+4/2/2022: Worked on adding pagination, filtering, and sorting, and began
+    building up components more to start having the look of the page
+4/3/2022: Added common buttons.
+4/4/2022: Added description to backend. Built up most of the app to where
+    I just need to add functionality and routing (at least as far as I can
+    tell so far).
+4/7/2022: Added the main navigation and a few functional buttons. Will get
+    more navigation done as build more of the app with forms and such.
+    Added selected to backend for shopping-list and possible-shopping-list.
+    Turned in DEL IV.
+4/13/2022: Started building the forms.
+4/14/2022 - 4/19/2022: Built the forms needed, got a bit stuck, but I
+    think I've got a better handle on it now and all seems to be
+    working as expected.
+4/20/2022: Finished working on forms (as far as can tell), but decided
+    to comment out anything with the Menu for now because the rest too
+    long to complete with forms, but will add back in later. Also
+    cleaned up some code.
+4/24/2022: Began connecting frontend and backend.
+4/25/2022: Finished connecting the frontend and backend. At least, I
+    think I finished. Turned in DEL V.
+4/26/2022: Implemented Auth. There is more I would like to work on
+    and eventually deploy it so I can use it, but for the project,
+    it is good enough, and can add to portfolio.
